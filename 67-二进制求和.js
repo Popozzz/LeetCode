@@ -4,39 +4,31 @@
  * @return {string}
  */
 var addBinary = function(a, b) {
-    var arr = a.split("");
-    var brr = b.split("");
+    var arr = a.split('');
+    var brr = b.split('');
+    
+    var i = arr.length - 1;
+    var j = brr.length - 1;
+    var add = 0;
     var result = '';
     
-    var l = arr.length;
-    var k = brr.length;
-    
-    var i = 0;
-    var full = 0;
-    
-    while(l || k || full) {
-        var m = '';
-        var n = '';
-        if (l > 0) {
-           m = arr.pop();
-            l --;
-        }
+    while (i>=0 || j>=0 || add > 0) {
+        let t1 = Number(arr[i] || 0);
+        let t2 = Number(brr[j] || 0);
+        let sum = t1 + t2 + add;
         
-        if (k > 0) {
-            n = brr.pop();
-            k --;
-        }
-        
-        var last = (m - 0) + (n - 0) + full;
-        
-        if (last >= 2) {
-            full = 1;
-            result = (last - 2) + result;
+        if (sum >= 2) {
+            sum -= 2;
+            add = 1;
         } else {
-            full = 0;
-            result = last + result;
+            result = result
+            add = 0;
         }
+        
+        result = sum + result;
+        i--;
+        j--;
     }
     
-    return result;
+     return result;
 };
