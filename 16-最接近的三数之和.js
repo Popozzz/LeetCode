@@ -19,7 +19,7 @@ var threeSumClosest = function(nums, target) {
     for (var i=1; i<nums.length-1; i++) {
         start = 0;
         end = nums.length - 1;
-        while(i> start && start < end && i < end) {
+        while(i > start && start < end && i < end) {
             let sum = nums[start] + nums[i] + nums[end];
             let minus = sum - target;
             if (min == null || Math.abs(minus) < Math.abs(min)) {
