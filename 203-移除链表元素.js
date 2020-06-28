@@ -23,7 +23,6 @@ var removeElements = function(head, val) {
                 prePointer.next = pointer.next;
                 pointer = prePointer;
             }
-           
         }
 
         prePointer = pointer;
