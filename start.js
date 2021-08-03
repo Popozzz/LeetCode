@@ -3,6 +3,7 @@ const fs = require('fs');
 var fileList = {
   'normal': [],
   '剑指Offer': [],
+  '剑指Offer II': [],
   '面试题': [],
 };
 
@@ -60,7 +61,7 @@ async function writeFile() {
     }).join('\n') + '\n'
   }, '')
 
-  await fs.writeFileSync('README.md', `# LeetCode\n\n## leetcode 题目(共 ${sum} 题)\n\n${content}`)
+  await fs.writeFileSync('README.md', `# 目录生成命令\nnode start.js\n\n## leetcode 题目(共 ${sum} 题)\n\n${content}`)
 }
 
 async function init() {
