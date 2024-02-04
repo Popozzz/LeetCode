@@ -69,7 +69,12 @@ async function writeFile() {
 
   await fs.writeFileSync(
     "README.md",
-    `# 目录生成命令\nnode start.js\n\n## leetcode 题目(共 ${sum} 题)\n\n${content}`
+`
+### 最近更新时间 ${new Date().toLocaleString()}\n
+# 目录生成命令\nnode start.js\n\n
+## leetcode 题目(共 ${sum} 题)\n\n
+${content}
+`
   );
 }
 
