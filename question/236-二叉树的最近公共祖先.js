@@ -12,15 +12,15 @@
  * @return {TreeNode}
  */
 var lowestCommonAncestor = function (root, p, q) {
-  let travelTree = (root) => {
-    if (!root || root == p || root == q) {
-      return root
+  let travelTree = (node) => {
+    if (!node || node == p || node == q) {
+      return node
     }
-    let left = travelTree(root.left)
-    let right = travelTree(root.right)
-    if (left && right) return root
+    let left = travelTree(node.left)
+    let right = travelTree(node.right)
+    if (left && right) return node
     if (!left) return right
     return left
   }
-  return travelTree(root, p, q)
+  return travelTree(root)
 }
